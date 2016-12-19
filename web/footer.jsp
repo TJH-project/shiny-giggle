@@ -127,7 +127,13 @@
         <script src="assets/js/jquery.countdown.min.js"></script>
         <script src="assets/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
         <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
-        <script src="assets/js/template-custom.js" type="text/javascript"></script> 
+        <script src="assets/js/template-custom.js" type="text/javascript"></script>
+        
+        <script src="assets/icheck/icheck.min.js"></script> 
+        <script src="assets/js/bootstrap-clockpicker.min.js"></script>
+        <script src="assets/js/bootstrap-datepicker.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/reservation-custom.js"></script>
 
         <!--revolution slider-->
         <script type="text/javascript" src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>

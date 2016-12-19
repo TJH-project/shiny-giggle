@@ -9,6 +9,9 @@
         <link href="assets/ionicons/css/ionicons.min.css" rel="stylesheet">
         <link href="assets/bower_components/flexslider/flexslider.css" rel="stylesheet">
         <link href="assets/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
+        
+        <link href="assets/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-clockpicker.min.css" rel="stylesheet">
         <!--slider revolution-->
         <link rel="stylesheet" type="text/css" href="assets/revolution/css/settings.css"> 
         <link rel="stylesheet" type="text/css" href="assets/revolution/css/layers.css">
@@ -134,7 +137,7 @@
                                 </ul>
                             </li>-->
                             <li><a href="reservation.html">Menu</a></li>
-                            <li><a href="reservation.html">Reservation</a></li>
+                            <li><a href="./reserve-a-table">Reservation</a></li>
                              <li><a href="reservation.html">News</a></li>
                              <li class="dropdown">
                                 <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Order now <span class="caret"></span></a>
