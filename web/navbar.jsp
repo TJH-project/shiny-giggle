@@ -36,10 +36,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 hidden-xs">
-                            <ul class="list-inline">
-                                <li><a href="javascript:void(0)"><i class="ion-ios-telephone"></i> +01 1800 495 593</a></li>
-                                <li><a href="javascript:void(0)"><i class="ion-email"></i> support@resto.com</a></li>
-                            </ul>
+                           
                         </div>
                         <div class="col-sm-6 text-right">
                             <ul class="list-inline level-2">
@@ -118,15 +115,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand logo" href="./">
 
-                            <img src="assets/images/logo-light.png" alt="logo" class="logo-default">
-                            <img src="assets/images/logo-dark.png" alt="logo" class="logo-scroll">
+                            <img src="assets/images/logo.png" alt="logo" class="logo-default">
+                            <img src="assets/images/logo-scroll.png" alt="logo" class="logo-scroll">
 
                         </a>
+                        
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
+                            
+                            
 
 <!--                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
@@ -136,7 +136,7 @@
                                     <li><a href="menu-grid.html">Menu grid</a></li>
                                 </ul>
                             </li>-->
-                            <li><a href="reservation.html">Menu</a></li>
+                            <li><a href="./menu">Menu</a></li>
                             <li><a href="./reserve-a-table">Reservation</a></li>
                              <li><a href="reservation.html">News</a></li>
                              <li class="dropdown">

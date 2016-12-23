@@ -6,14 +6,25 @@
     </welcome-file-list>
     
     
+    <!--    Reservation Page-->
     <servlet>
         <servlet-name>reserveTable</servlet-name>
         <servlet-class>servlets.reserveTable</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>reserveTable</servlet-name>
         <url-pattern>/reserve-a-table</url-pattern>
     </servlet-mapping>
     
+    
+    <!--    Menu Page-->
+    
+    <servlet>
+        <servlet-name>menu</servlet-name>
+        <servlet-class>servlets.menu</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>menu</servlet-name>
+        <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
 </web-app>

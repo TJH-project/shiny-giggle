@@ -21,6 +21,7 @@ $.validator.setDefaults({
             type: "POST",
             url: form.attr("action"),
             data: form.serialize(),
+			async: false,
             success: function (response) {
                 //alert(response);
                 $('#reservation-form')[0].reset();

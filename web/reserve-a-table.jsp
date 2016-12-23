@@ -21,67 +21,71 @@
                         </p>
                     </div>
 
-                    <form role="form" method="post" class="reservation-form" id="reservation-form" action="">
+                    <form method="post" class="reservation-form" id="reservation" action="./reserve-a-table">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control " name="name" id="r_name" placeholder="Name" required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" name="guests" id="r_guest" placeholder="Guest Number" min="1" max="8" maxlength="1" required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" name="phone" id="r_phone" placeholder="Phone Number: 018########"  required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-phone"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="email" id="r_email" placeholder="Email Id">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            
+                        
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="input-group date">
-                                    <input type="text" class="form-control datepicker" name="r_date" placeholder="Date">
+                                    <input type="text" class="form-control datepicker" name="date" placeholder="Date" required>
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-th"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control " name="r_name" id="r_name" placeholder="Name">
-                                    <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-user"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="r_email" id="r_email" placeholder="Email Id">
-                                    <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-envelope"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
                                 <div class="input-group clockpicker">
-                                    <input type="text" class="form-control" name="r_time" id="r_time" value="09:30" placeholder="Time">
+                                    <input type="text" class="form-control" name="time" id="r_time" placeholder="Time" required>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-time"></span>
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="r_guest" id="r_guest" placeholder="Guest Number">
-                                    <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-user"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="r_phone_number" id="r_phone_number" placeholder="Phone Number">
-                                    <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-phone"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="submit" class="btn btn-xl btn-dark btn-block" name="r_submit" value="Book">
+                        <input type="submit" class="btn btn-xl btn-dark btn-block" value="Book" onclick="return reservation()">
                         <div id="r_result"></div>  
                     </form>
 
                 </div>
             </div>
         </div>
+        
+        
 
 <%@include file = "footer.jsp" %>

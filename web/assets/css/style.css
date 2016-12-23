@@ -252,7 +252,7 @@ h6 {
 }
 
 .verticle-middle {
-  display: table-cell;
+display: table-cell;
   vertical-align: middle;
   width: 100%;
   z-index: 2;
@@ -669,6 +669,7 @@ HEADER STYLES
   margin: 0px;
   background-color: #fff;
   margin-bottom: 0px;
+	padding-bottom: 30px
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -2061,6 +2062,16 @@ label.error {
   .space-70 {
     height: 35px;
   }
+}
+
+.nav li a {
+	font-size: 25px;
+}
+
+.logo {
+	position: relative;
+	top: -30px;
+	right: 250px;
 }
 
 

@@ -1,16 +1,4 @@
-<div class="cta-background-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3 text-center">
-                        <h1 class="text-uppercase">Book a table now</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                        </p>
-                        <a href="#" class="btn btn-white btn-rounded">Make a reservation</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="cta-skin contact-info">
             <div class="container">
                 <div class="row">
@@ -128,12 +116,15 @@
         <script src="assets/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
         <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
         <script src="assets/js/template-custom.js" type="text/javascript"></script>
+        <script src="assets/js/onepage-custom.js" type="text/javascript"></script>
         
         <script src="assets/icheck/icheck.min.js"></script> 
         <script src="assets/js/bootstrap-clockpicker.min.js"></script>
         <script src="assets/js/bootstrap-datepicker.min.js"></script>
         <script src="assets/js/jquery.validate.min.js"></script>
         <script src="assets/js/reservation-custom.js"></script>
+        <script src="assets/js/myvalidations.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js" type="text/javascript"></script>
 
         <!--revolution slider-->
         <script type="text/javascript" src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>
