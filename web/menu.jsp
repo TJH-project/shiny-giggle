@@ -4,7 +4,7 @@
         <!--==============page header============-->
         <div class="page-breadcrumb" data-stellar-background-ratio="0.5">
             <div class="container text-center">
-                <h1>Menu Grid</h1>
+                <h1 class="br-pages">Menu</h1>
             </div>
         </div>
         <!--==============end page header============-->
@@ -22,13 +22,14 @@
             </ul>-->
 
 <ul class="menu-filter-list list-inline margin-b-40 text-center">
-                <li class="is-checked" data-filter=".food">Food</li>
-                <li data-filter=".bev">Beverages</li>
-                
+                <li class="is-checked" data-filter="*">All</li>
+                <li data-filter=".food-menu">Food</li>
+                <li data-filter=".bev-menu">Beverages</li>
             </ul>
 
-<ul class="food menu-filter-list list-inline margin-b-40 text-center sub-selector">
-                <li class="is-checked" data-filter="*">All</li>
+<div class="row menu-filter-items">
+    
+    <ul class="food-menu menu-filter-list list-inline margin-b-40 text-center menu-item">
                 <li data-filter=".soup">Soups</li>
                 <li data-filter=".bread">Bread</li>
                 <li data-filter=".apitz">Appetizers</li>
@@ -36,16 +37,16 @@
                 <li data-filter=".hot">Hot Dishes</li>
                 <li data-filter=".bbq">Barbecue</li>
                 <li data-filter=".seafood">Seafood</li>
+</ul>
 
-            </ul>
-
-<ul class="bev menu-filter-list list-inline margin-b-40 text-center sub-selector">
-                <li data-filter="*">All</li>
+    <ul class="bev-menu menu-filter-list list-inline margin-b-40 text-center menu-item">
                 <li data-filter=".soup">Soups</li>
                 <li data-filter=".bread">Bread</li>
                 
 
             </ul>
+</div>
+            
 
 
 

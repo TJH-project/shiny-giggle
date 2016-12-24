@@ -669,7 +669,6 @@ HEADER STYLES
   margin: 0px;
   background-color: #fff;
   margin-bottom: 0px;
-	padding-bottom: 30px
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -803,6 +802,7 @@ HEADER STYLES
   top: 0;
   width: 100%;
   z-index: 9999;
+	box-shadow: 0px 1px 20px black;
 }
 .header-top-transparent .top-bar {
   background: transparent;
@@ -826,6 +826,7 @@ HEADER STYLES
   -moz-box-shadow: rgba(0, 0, 0, 0.08) 1px solid;
   -ms-box-shadow: rgba(0, 0, 0, 0.08) 1px solid;
   box-shadow: rgba(0, 0, 0, 0.08) 1px solid;
+	box-shadow: 0px 1px 10px #aaa;
 }
 .header-top-transparent .is-sticky .navbar-default .navbar-nav > li > a {
   color: #000;
@@ -1152,7 +1153,7 @@ Slider styles
 Page breadcrumb
 */
 .page-breadcrumb {
-  padding: 250px 0 150px;
+  padding: 180px 0 150px;
   background: url(../images/bg5.jpg) no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -2070,8 +2071,19 @@ label.error {
 
 .logo {
 	position: relative;
-	top: -10px;
-	right: 1px;
+	top: -42px;
+}
+
+.logo-small {
+	position: relative;
+	top: -14px;
+}
+
+.br-pages {
+	letter-spacing: 8px;
+	display: inline; 
+	position: relative; 
+	top: 70px
 }
 
 

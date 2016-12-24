@@ -115,12 +115,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand logo" href="./">
-
-                            <img src="assets/images/logo.png" alt="logo" class="logo-default">
-                            <img src="assets/images/logo-scroll.png" alt="logo" class="logo-scroll">
-
-                        </a>
+                        <a class="navbar-brand logo" href="./"><img src="assets/images/logo.png" alt="logo" class="logo-default"></a>
+                        <a class="navbar-brand logo-small" href="./"><img src="assets/images/logo-small.png" alt="logo" class="logo-scroll"></a>
+                        
+                        
                         
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">

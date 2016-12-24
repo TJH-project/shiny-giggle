@@ -3,7 +3,7 @@
 <!--==============page header============-->
         <div class="page-breadcrumb" data-stellar-background-ratio="0.5">
             <div class="container text-center">
-                <h1>Reservation</h1>
+                <h1 class="br-pages">Reservation</h1>
             </div>
         </div>
         <!--==============end page header============-->
