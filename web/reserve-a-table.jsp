@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="input-group">
-                                    <input type="number" class="form-control" name="guests" id="r_guest" placeholder="Guest Number" min="1" max="8" maxlength="1" required>
+                                    <input type="number" class="form-control" name="guests" id="r_guest" placeholder="Guest Number" min="4" max="100" maxlength="3" required>
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-user"></span>
                                     </div>
@@ -43,7 +43,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="input-group">
-                                    <input type="number" class="form-control" name="phone" id="r_phone" placeholder="Phone Number: 018########"  required>
+                                    <input type="number" class="form-control" name="phone" id="r_phone" placeholder="Phone Number: 018########" minlength="11" maxlength="11"  required>
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-phone"></span>
                                     </div>

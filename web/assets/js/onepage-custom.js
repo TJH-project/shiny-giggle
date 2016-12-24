@@ -142,3 +142,25 @@ $(function () {
                     });
                 }
             });
+
+//sub-menu filter
+$(document).ready(function () {
+	if ($('.sub-menu-filter-items').length) {
+		var $galleryFilter = $('.sub-menu-filter-items').isotope({
+			itemSelector: '.sub-selector',
+			masonry: {
+				columnWidth: '.menu-item'
+			}
+		});
+		$('.sub-menu-filter-list').on('click', 'li', function () {
+			var filterValue = $(this).attr('data-filter');
+			$('.sub-menu-filter-list').find('.is-checked').removeClass('is-checked');
+			$(this).addClass('is-checked');
+			$galleryFilter.isotope({filter: filterValue});
+		});
+
+		$galleryFilter.imagesLoaded().progress(function () {
+			$galleryFilter.isotope('layout');
+		});
+	}
+});
