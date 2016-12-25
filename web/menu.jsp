@@ -1,3 +1,4 @@
+<%@page import="java.sql.ResultSet"%>
 <!DOCTYPE html><%@include file = "navbar.jsp" %>
 
 
@@ -21,16 +22,25 @@
 
             </ul>-->
 
+<form action="" class="search-form">
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search</label>
+            		<input type="text" class="form-control" name="search" id="search" placeholder="Type then press Enter">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+            </form>
+
 <ul class="menu-filter-list list-inline margin-b-40 text-center">
                 <li class="is-checked" data-filter="*">All</li>
                 <li data-filter=".food-menu">Food</li>
                 <li data-filter=".bev-menu">Beverages</li>
+                
             </ul>
 
 <div class="row menu-filter-items">
     
-    <ul class="food-menu menu-filter-list list-inline margin-b-40 text-center menu-item">
-                <li data-filter=".soup">Soups</li>
+    <ul class="food-menu menu-filter-list list-inline text-center menu-item menu-cats">
+                <li class="food-menu" data-filter=".soup">Soups</li>
                 <li data-filter=".bread">Bread</li>
                 <li data-filter=".apitz">Appetizers</li>
                 <li data-filter=".main-dishes">Main Dishes</li>
@@ -39,126 +49,50 @@
                 <li data-filter=".seafood">Seafood</li>
 </ul>
 
-    <ul class="bev-menu menu-filter-list list-inline margin-b-40 text-center menu-item">
-                <li data-filter=".soup">Soups</li>
-                <li data-filter=".bread">Bread</li>
+    <ul class="bev-menu menu-filter-list list-inline margin-b-40 menu-item">
+                <li data-filter=".fresh">Fresh</li>
+                <li data-filter=".hot-drinks">Hot Drinks</li>
                 
 
             </ul>
 </div>
             
-
+        
 
 
             <div class="row menu-filter-items">
-                <div class="soup col-sm-4 margin-b-30 menu-item">
+                
+                <%
+                ResultSet rs = (ResultSet) request.getAttribute("results");
+                
+                while (rs.next()) {
+                    String name = rs.getString("p_name");
+                    String category = rs.getString("p_category");
+                    String image = rs.getString("p_image");
+                    float price = rs.getFloat("p_price");
+                
+                %>
+                
+                <div class="<%=category%> col-sm-4 margin-b-30 menu-item">
                         <a href="#" class="menu-grid">
-                            <img src="assets/images/Menu/Lentil_Soup.jpg" alt="" class="img-responsive">
+                            <img src="<%=image%>" alt="" class="img-responsive">
                             <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$12.50</span>
-                                <h4>Menu title</h4>
+                                <span class="price pull-right">RM <%=price%></span>
+                                <h4><%=name%></h4>
                                 <p>
                                     Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
                                 </p>
+                                
+                                <div class="input-group">
+                                    <div class="input-group-btn">
+                                      <!-- Button and dropdown menu -->
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="...">
+                                  </div>
                             </div>                           
                         </a>
-                </div><!--end col-->
-                 <div class="soup lunch col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img src="assets/images/Menu/Mushroom_Soup.jpg" alt="" class="img-responsive">
-                            <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$9.50</span>
-                                <h4>Menu title</h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
-                            </div>                           
-                        </a>
-                </div><!--end col-->
-                 <div class="soup lunch col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img src="assets/images/Menu/Chicken_Soup.jpg" alt="" class="img-responsive">
-                            <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$9.50</span>
-                                <h4>Menu title</h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
-                            </div>                           
-                        </a>
-                </div><!--end col-->
-                 <div class=" soup lunch col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img src="assets/images/Menu/Vegetable_Soup.jpg" alt="" class="img-responsive">
-                            <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$9.50</span>
-                                <h4>Menu title</h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
-                            </div>                           
-                        </a>
-                </div><!--end col-->
-                 <div class="soup start col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img src="assets/images/Menu/Moroccan_Harira_Soup.jpg" alt="" class="img-responsive">
-                            <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$9.50</span>
-                                <h4>Menu title</h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
-                            </div>                           
-                        </a>
-                </div><!--end col-->
-                 <div class="main-dishes col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img src="assets/images/img-6.jpg" alt="" class="img-responsive">
-                            <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$9.50</span>
-                                <h4>Menu title</h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
-                            </div>                           
-                        </a>
-                </div><!--end col-->
-                 <div class=" dinner start col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img src="assets/images/img-7.jpg" alt="" class="img-responsive">
-                            <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$9.50</span>
-                                <h4>Menu title</h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
-                            </div>                           
-                        </a>
-                </div><!--end col-->
-                 <div class=" breakfast lunch col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img src="assets/images/img-8.jpg" alt="" class="img-responsive">
-                            <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$9.50</span>
-                                <h4>Menu title</h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
-                            </div>                           
-                        </a>
-                </div><!--end col-->
-                 <div class=" start dinner col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img src="assets/images/img-9.jpg" alt="" class="img-responsive">
-                            <div class="menu-grid-desc">                               
-                                <span class="price pull-right">$9.50</span>
-                                <h4>Menu title</h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
-                            </div>                           
-                        </a>
-                </div><!--end col-->
+                </div>
+                 <%}%>
             </div>
         </div>
 

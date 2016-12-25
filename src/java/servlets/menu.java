@@ -1,10 +1,9 @@
 package servlets;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.sql.*;
 
 /**
  *
@@ -12,14 +11,33 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class menu extends HttpServlet {
 
-    
+    Connection c;
+    Statement st;
 
    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        request.getRequestDispatcher("menu.jsp").forward(request, response);
-    }
+        try { 
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "");
+
+            st = c.createStatement();
+            
+            ResultSet rs = st.executeQuery("select * from food_products");
+            
+            request.setAttribute("results", rs);
+            
+            request.getRequestDispatcher("menu.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            PrintWriter out = response.getWriter();
+            out.println("Something went wrong:\n\n"+ex);
+        }
+        
+            
+     }
 
 }
