@@ -103,9 +103,12 @@
         <a href="#" class="scrollToTop"><i class="ion-android-arrow-up"></i></a>
         <!--back to top end-->
 
-
+        <script>
+            $('.dropdown-toggle').dropdown();
+        </script>
 
         <!-- jQuery plugins-->
+        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
         <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="assets/js/jquery.easing.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -149,14 +152,20 @@
                         type: "on",
                         levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85],
                         origo: "enterpoint",
-                        speed: 400,
+                        speed: 600,
                         bgparallax: "on",
                         disable_onmobile: "off"
                     },
                     gridwidth: 1170,
-                    gridheight: 600
+                    gridheight: 400
                 });
             });
+            
+            $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus();
+            });
+            
+            
         </script>
     </body>
 </html>

@@ -26,9 +26,7 @@
         <![endif]-->
     </head>
     <body>
-        <!--pre-loader-->
-         <div id="preloader"></div>
-        <!--pre-loader-->
+        
         <!--===============main navigation + top bar==========================-->
         <header class="header header-top-transparent">
             <!--top bar-->
@@ -40,13 +38,97 @@
                         </div>
                         <div class="col-sm-6 text-right">
                             <ul class="list-inline level-2">
-                                <li class="b-table"><a href="#" class=" waves-float waves-button">Book a table</a></li>
+                                <li class="b-table"><a href="#" class=" waves-float waves-button" data-toggle="modal" data-target="#myModal">Book a table</a></li>
                                 
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Book a table pop up-->
+            
+         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <form method="post" class="reservation-form" id="reservation" action="./reserve-a-table">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Reserve a table</h4>
+      </div>
+      <div class="modal-body">
+        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control " name="name" id="r_name" placeholder="Name" required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" name="guests" id="r_guest" placeholder="Guest Number" min="4" max="100" maxlength="3" required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" name="phone" id="r_phone" placeholder="Phone Number: 018########" minlength="11" maxlength="11"  required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-phone"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="email" id="r_email" placeholder="Email Id">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="input-group date">
+                                    <input type="text" class="form-control datepicker" name="date" placeholder="Date" required>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group clockpicker">
+                                    <input type="text" class="form-control" name="time" id="r_time" placeholder="Time" required>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-time"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="r_result"></div>  
+                    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" onclick="return reservation()">Book</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+        <!-- End book a table pop up -->
+            
             <!--end top bar-->
             <!--cart menu side panel-->
             <aside id="cartNavmenu" class="navmenu navmenu-inverse navmenu-fixed-right offcanvas">
@@ -101,7 +183,8 @@
             </aside>
 
             <!--main navigation-->
-            <nav class="navbar navbar-default navbar-static-top sticky-header">
+            
+            <nav class="navbar navbar-default navbar-static-top sticky-header" >
                 <div class="container">
 
                     <!--cart icon-->
@@ -115,12 +198,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand logo" href="./">
-
-                            <img src="assets/images/logo.png" alt="logo" class="logo-default">
-                            <img src="assets/images/logo-scroll.png" alt="logo" class="logo-scroll">
-
-                        </a>
+                        <a class="navbar-brand logo" href="./"><img src="assets/images/logo.png" alt="logo" class="logo-default"></a>
+                        <a class="navbar-brand logo-small" href="./"><img src="assets/images/logo-small.png" alt="logo" class="logo-scroll"></a>
+                        
+                        
                         
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
@@ -139,18 +220,12 @@
                             <li><a href="./menu">Menu</a></li>
                             <li><a href="./reserve-a-table">Reservation</a></li>
                              <li><a href="reservation.html">News</a></li>
-                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Order now <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="menu-simple.html">Fast order</a></li>
-                                    <li><a href="menu-tiles.html">Menu tiles</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="reservation.html">Catering</a></li>
+                             <li><a href="reservation.html">Catering</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->
             </nav>
+        </div>
         </header>
 
         <!--===============end main navigation + top bar =====================-->

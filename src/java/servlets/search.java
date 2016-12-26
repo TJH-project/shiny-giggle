@@ -9,7 +9,7 @@ import java.sql.*;
  *
  * @author Osama Islam
  */
-public class menu extends HttpServlet {
+public class search extends HttpServlet {
 
     Connection c;
     Statement st;
@@ -19,6 +19,8 @@ public class menu extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        String search = request.getParameter("search");
+        
         try { 
             Class.forName("com.mysql.jdbc.Driver");
             
@@ -26,7 +28,9 @@ public class menu extends HttpServlet {
 
             st = c.createStatement();
             
-            ResultSet rs = st.executeQuery("select * from food_products");
+            ResultSet rs = st.executeQuery("select * from food_products where p_name "
+                    + "like '%"+ search +"%' or p_description like '%"+ search +"%' "
+                            + "or p_category like '%"+ search +"%'");
             
             request.setAttribute("results", rs);
             
