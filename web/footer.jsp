@@ -103,9 +103,12 @@
         <a href="#" class="scrollToTop"><i class="ion-android-arrow-up"></i></a>
         <!--back to top end-->
 
-
+        <script>
+            $('.dropdown-toggle').dropdown();
+        </script>
 
         <!-- jQuery plugins-->
+        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
         <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="assets/js/jquery.easing.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -141,7 +144,7 @@
                     jsFileLocation: "../../revolution/js/",
                     sliderLayout: "fullscreen",
                     dottedOverlay: "none",
-                    delay: 5000,
+                    delay: 9000,
                     navigation: {
                         arrows: {enable: true}
                     },
@@ -154,9 +157,15 @@
                         disable_onmobile: "off"
                     },
                     gridwidth: 1170,
-                    gridheight: 600
+                    gridheight: 400
                 });
             });
+            
+            $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus();
+            });
+            
+            
         </script>
     </body>
 </html>

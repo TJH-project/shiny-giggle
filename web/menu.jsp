@@ -22,7 +22,7 @@
 
             </ul>-->
 
-<form action="" class="search-form">
+<form action="./search" class="search-form">
                 <div class="form-group has-feedback">
             		<label for="search" class="sr-only">Search</label>
             		<input type="text" class="form-control" name="search" id="search" placeholder="Type then press Enter">
@@ -82,13 +82,12 @@
                                 <p>
                                     Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
                                 </p>
-                                
-                                <div class="input-group">
-                                    <div class="input-group-btn">
-                                      <!-- Button and dropdown menu -->
-                                    </div>
-                                    <input type="text" class="form-control" aria-label="...">
-                                  </div>
+<a href="#" class="dropdown-toggle btn btn-warning" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="float: right"> Buy now 
+    <span class="caret"></span> </a>
+    <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4"> 
+        <li><a href="#">Fast Order</a></li> 
+        <li><a href="#">Add to cart</a></li> 
+        
                             </div>                           
                         </a>
                 </div>
