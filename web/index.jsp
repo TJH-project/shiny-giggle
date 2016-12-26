@@ -4,7 +4,7 @@
 
         <!--slider revolution start-->
         <div class="rev_slider_wrapper">
-            <div id="slider1" class="rev_slider fullwidthabanner"  data-version="5.0">
+            <div id="slider1" class="rev_slider fullwidthabanner"  data-version="5.0" >
                 <ul> 
                     <li data-transition="random"> 
                         <!-- MAIN IMAGE -->
