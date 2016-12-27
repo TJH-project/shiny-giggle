@@ -120,6 +120,7 @@
         <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
         <script src="assets/js/template-custom.js" type="text/javascript"></script>
         <script src="assets/js/onepage-custom.js" type="text/javascript"></script>
+        <script src="assets/js/ckeditor.js" type="text/javascript"></script>
         
         <script src="assets/icheck/icheck.min.js"></script> 
         <script src="assets/js/bootstrap-clockpicker.min.js"></script>
@@ -138,28 +139,28 @@
         <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
         <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
         <script>
-//            jQuery(document).ready(function () {
-//                jQuery("#slider1").show().revolution({
-//                    sliderType: "standard",
-//                    jsFileLocation: "../../revolution/js/",
-//                    sliderLayout: "fullscreen",
-//                    dottedOverlay: "none",
-//                    delay: 2000,
-//                    navigation: {
-//                        arrows: {enable: true}
-//                    }
-//                    parallax: {
-//                        type: "on",
-//                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85],
-//                        origo: "enterpoint",
-//                        speed: 600,
-//                        bgparallax: "on",
-//                        disable_onmobile: "off"
-//                    },
-//                    gridwidth: 1170,
-//                    gridheight: 400
-//                });
-//            });
+            jQuery(document).ready(function () {
+                jQuery("#slider1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "../../revolution/js/",
+                    sliderLayout: "fullscreen",
+                    dottedOverlay: "none",
+                    delay: 2000,
+                    navigation: {
+                        arrows: {enable: true}
+                    }
+                    parallax: {
+                        type: "on",
+                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85],
+                        origo: "enterpoint",
+                        speed: 600,
+                        bgparallax: "on",
+                        disable_onmobile: "off"
+                    },
+                    gridwidth: 1170,
+                    gridheight: 400
+                });
+            });
             
             $('#myModal').on('shown.bs.modal', function () {
             $('#myInput').focus();
