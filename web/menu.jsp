@@ -40,7 +40,7 @@
 <div class="row menu-filter-items">
     
     <ul class="food-menu menu-filter-list list-inline text-center menu-item menu-cats">
-                <li class="food-menu" data-filter=".soup">Soups</li>
+        <li class="food-menu" data-filter=".soup"><a href="#product">Soups</a></li>
                 <li data-filter=".bread">Bread</li>
                 <li data-filter=".apitz">Appetizers</li>
                 <li data-filter=".main-dishes">Main Dishes</li>
@@ -93,6 +93,7 @@
                 </div>
                  <%}%>
             </div>
+            <a href="product"></a>
         </div>
 
        <%@include file = "footer.jsp" %>
