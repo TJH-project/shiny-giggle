@@ -40,18 +40,20 @@
 <div class="row menu-filter-items">
     
     <ul class="food-menu menu-filter-list list-inline text-center menu-item menu-cats">
-        <li class="food-menu" data-filter=".soup"><a href="#product">Soups</a></li>
-                <li data-filter=".bread">Bread</li>
-                <li data-filter=".apitz">Appetizers</li>
-                <li data-filter=".main-dishes">Main Dishes</li>
-                <li data-filter=".hot">Hot Dishes</li>
-                <li data-filter=".bbq">Barbecue</li>
-                <li data-filter=".seafood">Seafood</li>
+        <li data-filter=".soup"><a href="#soups">Soups</a></li>
+                <li data-filter=".bread"><a href="#bread">Bread</a></li>
+                <li data-filter=".appetizers"><a href="#appetizers">Appetizers</a></li>
+                <li data-filter=".main-dishes"><a href="#main-dishes">Main Dishes</a></li>
+                <li data-filter=".hot"><a href="#hot-dishes">Hot Dishes</a></li>
+                <li data-filter=".bbq"><a href="#bbq">Barbecue</a></li>
+                <li data-filter=".seafood"><a href="#seafood">Seafood</a></li>
+                <li data-filter=".desserts"><a href="#desserts">Desserts</a></li>
 </ul>
 
     <ul class="bev-menu menu-filter-list list-inline margin-b-40 menu-item">
-                <li data-filter=".fresh">Fresh</li>
-                <li data-filter=".hot-drinks">Hot Drinks</li>
+                <li data-filter=".fresh"><a href="#fresh-juices">Fresh Juices</a></li>
+                <li data-filter=".hot-drinks"><a href="#hot-drinks">Hot Drinks</a></li>
+                <li data-filter=".hot-drinks"><a href="#soft-drinks">Soft Drinks</a></li>
                 
 
             </ul>
@@ -67,6 +69,7 @@
                 
                 while (rs.next()) {
                     String name = rs.getString("p_name");
+                    String description = rs.getString("p_description");
                     String category = rs.getString("p_category");
                     String image = rs.getString("p_image");
                     float price = rs.getFloat("p_price");
@@ -79,9 +82,7 @@
                             <div class="menu-grid-desc">                               
                                 <span class="price pull-right">RM <%=price%></span>
                                 <h4><%=name%></h4>
-                                <p>
-                                    Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                                </p>
+                                <p><%=description%></p>
 <a href="#" class="dropdown-toggle btn btn-warning" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="float: right"> Buy now 
     <span class="caret"></span> </a>
     <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4"> 
