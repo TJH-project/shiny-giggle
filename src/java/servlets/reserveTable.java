@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 
 public class reserveTable extends HttpServlet {
     
-    Statement st;
+    Statement st; 
     Connection c;
 
 

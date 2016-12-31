@@ -1,3 +1,4 @@
+<%@include file = "backend/config.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -130,53 +131,65 @@
         <!-- End book a table pop up -->
             
             <!--end top bar-->
+            
             <!--cart menu side panel-->
+            
+            <% 
+            int items = 222;
+            ResultSet count = st.executeQuery("select count(*) from cart");
+            if (count.next()) items = count.getInt(1);
+            count.close();
+            
+            ResultSet res = st.executeQuery("select * from cart");
+            
+            %>
+            
+           
             <aside id="cartNavmenu" class="navmenu navmenu-inverse navmenu-fixed-right offcanvas">
                 <div class="cart-inner">
-                    <h4>Your cart (3)</h4>
+                    <h4>Your cart (<%=items%>)</h4>
                     <hr>
                     <ul class="list-unstyled cart-list margin-b-30">
+                        <%
+                            if (items == 0) {
+                                %>
+                                <center><h4>No items in the cart</h4></center>
+                        <%
+                            }
+                        else
+                        while(res.next()) {
+                            String item_name = res.getString("item_name");
+                            String item_image = res.getString("item_image");
+                            float item_price = res.getFloat("item_price");
+                            int item_count = res.getInt("item_count");
+                            float item_total = res.getFloat("item_total");
+                        %>
                         <li class="clearfix">
                             <div class="cart-thumb">
                                 <a href="#">
-                                    <img src="assets/images/img-1.jpg" alt="" class="img-responsive" width="90">
+                                    <img src="<%=item_image%>" alt="" class="img-responsive" width="90">
                                 </a>
                             </div>
                             <div class="cart-content">
                                 <span class="close"><i class="ion-close"></i></span>
-                                <h5>Bonanaza family pack</h5>
-                                <p><span class="price">$48.00</span>  x 2</p>
+                                <h5><%=item_name%></h5>
+                                <p><span class="price">RM <%=item_price%></span>  x <%=item_count%></p>
                             </div>
                         </li>
-                        <li class="clearfix">
-                            <div class="cart-thumb">
-                                <a href="#">
-                                    <img src="assets/images/img-2.jpg" alt="" class="img-responsive" width="90">
-                                </a>
-                            </div>
-                            <div class="cart-content">
-                                <span class="close"><i class="ion-close"></i></span>
-                                <h5>Bonanaza family pack</h5>
-                                <p><span class="price">$48.00</span>  x 2</p>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <div class="cart-thumb">
-                                <a href="#">
-                                    <img src="assets/images/img-3.jpg" alt="" class="img-responsive" width="90">
-                                </a>
-                            </div>
-                            <div class="cart-content">
-                                <span class="close"><i class="ion-close"></i></span>
-                                <h5>Bonanaza family pack</h5>
-                                <p><span class="price">$48.00</span>  x 2</p>
-                            </div>
-                        </li>
+                        <%}%>
                         <li>
+                            <%
+                            if (items !=0) {
+                                %>
                             <div class="text-center">
                                 <a href="shop-checkout.html" class="btn btn-default">Checkout</a>
                                 <a href="shop-cart.html" class="btn btn-primary">View Cart</a>
                             </div>
+                            
+                            <%
+                            }
+                            %>
+                            
                         </li>
                     </ul>                       
                 </div>

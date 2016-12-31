@@ -108,7 +108,7 @@
         </script>
 
         <!-- jQuery plugins-->
-        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<!--        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>-->
         <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="assets/js/jquery.easing.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -129,6 +129,7 @@
         <script src="assets/js/reservation-custom.js"></script>
         <script src="assets/js/myvalidations.js"></script>
         <script src="assets/js/isotope.pkgd.min.js" type="text/javascript"></script>
+        <script src="assets/js/cart.min.js" type="text/javascript"></script>
 
         <!--revolution slider-->
         <script type="text/javascript" src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>
@@ -139,33 +140,41 @@
         <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
         <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
         <script>
-            jQuery(document).ready(function () {
-                jQuery("#slider1").show().revolution({
-                    sliderType: "standard",
-                    jsFileLocation: "../../revolution/js/",
-                    sliderLayout: "fullscreen",
-                    dottedOverlay: "none",
-                    delay: 2000,
-                    navigation: {
-                        arrows: {enable: true}
-                    }
-                    parallax: {
-                        type: "on",
-                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85],
-                        origo: "enterpoint",
-                        speed: 600,
-                        bgparallax: "on",
-                        disable_onmobile: "off"
-                    },
-                    gridwidth: 1170,
-                    gridheight: 400
-                });
-            });
+//            jQuery(document).ready(function () {
+//                jQuery("#slider1").show().revolution({
+//                    sliderType: "standard",
+//                    jsFileLocation: "../../revolution/js/",
+//                    sliderLayout: "fullscreen",
+//                    dottedOverlay: "none",
+//                    delay: 2000,
+//                    navigation: {
+//                        arrows: {enable: true}
+//                    }
+//                    parallax: {
+//                        type: "on",
+//                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85],
+//                        origo: "enterpoint",
+//                        speed: 600,
+//                        bgparallax: "on",
+//                        disable_onmobile: "off"
+//                    },
+//                    gridwidth: 1170,
+//                    gridheight: 400
+//                });
+//            });
             
             $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').focus();
             });
             
+            $('#order').on('shown.bs.modal', function () {
+                
+            //$('.modal-body #myInput').focus();
+            });
+            
+            
+            jQuery(function() {
+                CartJS.init({{ cart | json }});
+            });
             
         </script>
     </body>

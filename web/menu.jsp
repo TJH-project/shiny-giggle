@@ -1,4 +1,4 @@
-<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html><%@include file = "navbar.jsp" %>
 
 
@@ -31,8 +31,8 @@
             </form>
 
 <ul class="menu-filter-list list-inline margin-b-40 text-center">
-                <li class="is-checked" data-filter="*">All</li>
-                <li data-filter=".food-menu">Food</li>
+<!--                <li class="is-checked" data-filter="*">All</li>-->
+                <li class="is-checked" data-filter=".food-menu">Food</li>
                 <li data-filter=".bev-menu">Beverages</li>
                 
             </ul>
@@ -66,8 +66,13 @@
                 
                 <%
                 ResultSet rs = (ResultSet) request.getAttribute("results");
+                String img = "";
+                String meal = "";
+                String desc = "";
+                float p = 0;
                 
                 while (rs.next()) {
+                    int id = rs.getInt("p_id");
                     String name = rs.getString("p_name");
                     String description = rs.getString("p_description");
                     String category = rs.getString("p_category");
@@ -78,7 +83,7 @@
                 
                 <div class="<%=category%> col-sm-4 margin-b-30 menu-item">
                         <a href="#" class="menu-grid">
-                            <img src="<%=image%>" alt="" class="img-responsive">
+                            <img id="prod" src="<%=image%>" alt="" class="img-responsive">
                             <div class="menu-grid-desc">                               
                                 <span class="price pull-right">RM <%=price%></span>
                                 <h4><%=name%></h4>
@@ -86,7 +91,7 @@
 <a href="#" class="dropdown-toggle btn btn-warning" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="float: right"> Buy now 
     <span class="caret"></span> </a>
     <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4"> 
-        <li><a href="#">Fast Order</a></li> 
+        <li><a href="#" data-toggle="modal" data-target="#order">Fast Order</a></li> 
         <li><a href="#">Add to cart</a></li> 
         
                             </div>                           
@@ -96,5 +101,98 @@
             </div>
             <a href="product"></a>
         </div>
+            
+            
+        <!-- Order pop up-->
+            
+<div class="modal fade" id="order" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog order" role="document">
+    <div class="modal-content">
+        <form class="form-horizontal" action="/order">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Order now!</h4>
+      </div>
+      <div class="modal-body">
+          
+          <div class="row">
+          
+          <div class="col-lg-8">
+              
+              <fieldset>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Full name</label>  
+  <div class="col-md-5">
+  <input id="name" name="name" type="text" placeholder="Enter name here..." class="form-control input-md" required="">
+  <span class="help-block">Name of the recipient</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="phone">Contact No.</label>  
+  <div class="col-md-5">
+  <input id="phone" name="phone" type="text" placeholder="Phone number" class="form-control input-md" required="">
+  <span class="help-block">We will contact you there</span>  
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="method">Type of order</label>
+  <div class="col-md-4"> 
+    <label class="radio-inline" for="method-0">
+      <input type="radio" name="method" id="method-0" value="pickup" checked="checked">
+      Pick up
+    </label> 
+    <label class="radio-inline" for="method-1">
+      <input type="radio" name="method" id="method-1" value="delivery">
+      Delivery
+    </label>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="address">Address</label>  
+  <div class="col-md-5">
+  <input id="address" name="address" type="text" placeholder="Your Address" class="form-control input-md" required="">
+  <span class="help-block">Delivery address</span>  
+  </div>
+</div>
+
+</fieldset>
+              
+          </div>
+              
+          
+          <div class="col-lg-4 thumbnail">
+              
+              <img id="img" src="" alt="image"/>
+                  <div class="caption">
+                    <h3 id="title">Title</h3>
+                    <p id="desc">description............</p>
+                  </div>
+              
+              
+              
+          </div>       
+
+
+      </div>
+      <div class="modal-footer">
+          <input type="reset" class="btn btn-default" value="reset" />
+        <button type="button" class="btn btn-success">Order now!</button>
+      </div>
+        
+              </div>
+        </form>
+              
+    </div>
+  </div>
+</div>
 
        <%@include file = "footer.jsp" %>

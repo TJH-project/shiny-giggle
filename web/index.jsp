@@ -53,7 +53,7 @@
                     <li data-transition="random"> 
                         <!-- MAIN IMAGE -->
 
-                        <img src="assets/images/res01.JPG"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+                        <img src="assets/images/res01.jpg"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption tp-resizeme slider-title" 
                              data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
@@ -92,22 +92,14 @@
                     <li data-transition="random"> 
                         <!-- MAIN IMAGE -->
 
-                        <img src="assets/images/res02.JPG"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+                        <img src="assets/images/res02.jpg"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
 
                     </li>
                      
                     <li data-transition="random"> 
                         <!-- MAIN IMAGE -->
 
-                        <img src="assets/images/res03.JPG"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
-
-                    </li>
-                    
-                     
-                    <li data-transition="random"> 
-                        <!-- MAIN IMAGE -->
-
-                        <img src="assets/images/res04.JPG"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+                        <img src="assets/images/res03.jpg"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
 
                     </li>
                     
@@ -115,7 +107,15 @@
                     <li data-transition="random"> 
                         <!-- MAIN IMAGE -->
 
-                        <img src="assets/images/res05.JPG"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+                        <img src="assets/images/res04.jpg"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+
+                    </li>
+                    
+                     
+                    <li data-transition="random"> 
+                        <!-- MAIN IMAGE -->
+
+                        <img src="assets/images/res05.jpg"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
 
                     </li>
                     
@@ -124,7 +124,7 @@
                     <li data-transition="random"> 
                         <!-- MAIN IMAGE -->
 
-                        <img src="assets/images/res06.JPG"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+                        <img src="assets/images/res06.jpg"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
 
                     </li>
                     
