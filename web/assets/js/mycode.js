@@ -49,16 +49,16 @@ $('.add-to-cart').on('click', function () {
         });
     }
         // Remove items
-        $('.remove-item').on('click', function () {
+        $( document ).on( 'click', '.remove-item', function() {
                     var mid = $(this).attr('mid');
-                    
-                    $.ajax({
+
+                       $.ajax({
                        url: 'testback.jsp',
                        method: 'POST',
-                       data: {remove:1, mid: mid},
+                       data: {remove:mid},
                        success: function () {
-                           
                            cartItems();
+                           cartItemCount();
                        }
                     });
             });
