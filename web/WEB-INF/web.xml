@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     
+    
+    
+    
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-    
-    
     <!--    Reservation Page-->
-    
     <servlet>
         <servlet-name>reserveTable</servlet-name>
         <servlet-class>servlets.reserveTable</servlet-class>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>reserveTable</servlet-name>
         <url-pattern>/reserve-a-table</url-pattern>
     </servlet-mapping>
-    
-    
     <!--    Menu Page-->
-    
     <servlet>
         <servlet-name>menu</servlet-name>
         <servlet-class>servlets.menu</servlet-class>
@@ -28,7 +27,6 @@
         <servlet-name>menu</servlet-name>
         <url-pattern>/menu</url-pattern>
     </servlet-mapping>
-    
     <!--    Menu Page-->
     <servlet>
         <servlet-name>search</servlet-name>
@@ -39,4 +37,14 @@
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
     
+    <!-- Cart page -->
+    
+    <servlet>
+        <servlet-name>cart</servlet-name>
+        <servlet-class>servlets.cart</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cart</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
 </web-app>

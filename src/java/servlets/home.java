@@ -14,11 +14,18 @@ import javax.servlet.http.*;
  * @author Osama Islam
  */
 public class home extends HttpServlet {
-
+    
+    
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String n = request.getRemoteHost();
+        
+        HttpSession session=request.getSession();  
+        session.setAttribute("customer",n);
+            
     }
 
     

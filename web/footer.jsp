@@ -109,7 +109,6 @@
 
         <!-- jQuery plugins-->
 <!--        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>-->
-        <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="assets/js/jquery.easing.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/bower_components/flexslider/jquery.flexslider-min.js"></script>
@@ -127,9 +126,8 @@
         <script src="assets/js/bootstrap-datepicker.min.js"></script>
         <script src="assets/js/jquery.validate.min.js"></script>
         <script src="assets/js/reservation-custom.js"></script>
-        <script src="assets/js/myvalidations.js"></script>
+        <script src="assets/js/mycode.js"></script>
         <script src="assets/js/isotope.pkgd.min.js" type="text/javascript"></script>
-        <script src="assets/js/cart.min.js" type="text/javascript"></script>
 
         <!--revolution slider-->
         <script type="text/javascript" src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>
@@ -166,15 +164,9 @@
             $('#myModal').on('shown.bs.modal', function () {
             });
             
-            $('#order').on('shown.bs.modal', function () {
-                
-            //$('.modal-body #myInput').focus();
-            });
+            cartItems();
             
             
-            jQuery(function() {
-                CartJS.init({{ cart | json }});
-            });
             
         </script>
     </body>

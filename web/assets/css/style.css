@@ -2141,3 +2141,20 @@ label.error {
 .order {
     width: 70%
 }
+
+.thumbnail {
+    position: relative;
+    right: 40px
+}
+
+.menu-image {
+    height: 250px;
+}
+
+.grid {
+    height: 400px
+}
+
+.btn {
+    border-radius: 4px
+}

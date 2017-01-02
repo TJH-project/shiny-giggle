@@ -66,10 +66,6 @@
                 
                 <%
                 ResultSet rs = (ResultSet) request.getAttribute("results");
-                String img = "";
-                String meal = "";
-                String desc = "";
-                float p = 0;
                 
                 while (rs.next()) {
                     int id = rs.getInt("p_id");
@@ -81,9 +77,9 @@
                 
                 %>
                 
-                <div class="<%=category%> col-sm-4 margin-b-30 menu-item">
-                        <a href="#" class="menu-grid">
-                            <img id="prod" src="<%=image%>" alt="" class="img-responsive">
+                <div class="<%=category%> col-md-4 margin-b-30 menu-item grid">
+                        
+                            <img id="prod" src="<%=image%>" alt="" class="img-responsive menu-image">
                             <div class="menu-grid-desc">                               
                                 <span class="price pull-right">RM <%=price%></span>
                                 <h4><%=name%></h4>
@@ -91,8 +87,8 @@
 <a href="#" class="dropdown-toggle btn btn-warning" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="float: right"> Buy now 
     <span class="caret"></span> </a>
     <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4"> 
-        <li><a href="#" data-toggle="modal" data-target="#order">Fast Order</a></li> 
-        <li><a href="#">Add to cart</a></li> 
+        <li><a class="fast-order" href="#" data-toggle="modal" mid="<%=id%>" data-target="#order">Fast Order</a></li> 
+        <li><a class="add-to-cart" mid="<%=id%>" href="#">Add to cart</a></li> 
         
                             </div>                           
                         </a>
@@ -169,17 +165,14 @@
           </div>
               
           
-          <div class="col-lg-4 thumbnail">
-              
-              <img id="img" src="" alt="image"/>
-                  <div class="caption">
-                    <h3 id="title">Title</h3>
-                    <p id="desc">description............</p>
-                  </div>
-              
-              
-              
-          </div>       
+          <div class="thumbnail col-sm-4 margin-b-30 menu-item">
+                        
+                            <img id="img" src="" alt="" class="img-responsive">
+                            <div class="menu-grid-desc caption">                               
+                                <span class="price pull-right">RM <span id="price"></span></span>
+                                <h4 id="title"></h4>
+                            </div>             
+                </div>      
 
 
       </div>
@@ -194,5 +187,4 @@
     </div>
   </div>
 </div>
-
        <%@include file = "footer.jsp" %>
