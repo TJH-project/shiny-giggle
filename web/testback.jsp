@@ -13,6 +13,7 @@
     
     if (check.next()) {
         st.executeUpdate("update cart set item_count = item_count+1 where item_id = " + mid);
+        check.close();
     }
     else {
        ResultSet rs = st.executeQuery("select p_name, p_price, p_image from food_products where p_id = " + mid);
@@ -27,7 +28,10 @@
         
         out.print("Product added to cart");
         
-    } 
+        
+        
+    }
+    rs.close();
     }
     }
     
@@ -43,7 +47,7 @@
             float price = ret.getFloat("item_price");
             int count = ret.getInt("item_count");
             
-            out.print(" <li class=\"clearfix\">"+
+            out.print(" <li class=\"clearfix\" cartli=\""+ id +"\">"+
                            " <div class=\"cart-thumb\">" +
                                 
                                     "<img src=\""+ image +"\" class=\"img-responsive\" width=\"90\" id=\"item-image\">"+
@@ -56,17 +60,19 @@
                             "</div>"+
                         "</li> ");
         }
+        ret.close();
+        
     }
         
+    
         String badge = request.getParameter("badge");
-        
         
         if (badge !=null) {
             int cnt = 0;
             ResultSet count = st.executeQuery("select count(*) from cart");
             
             if(count.next()) cnt = count.getInt("count(*)");
-            
+            count.close();
             out.print(cnt);
         }
         
@@ -82,22 +88,38 @@
         // Removing Item
         
         if (request.getParameter("remove") !=null) {
-            String rid = request.getParameter("mid");
-            st.executeUpdate("delete from cart where item_id = " + rid + " and customer_id = " + session.getAttribute("customer"));
+            String rid = request.getParameter("remove");
+            st.executeUpdate("delete from cart where item_id = " + rid + " and customer_id = '" + session.getAttribute("customer") + "'");
+            
+            out.print(rid);
         }
+        
+        
+        
+        
+        
         // Adding +1
         if (request.getParameter("add") !=null) {
             String madd = request.getParameter("add");
-            out.print(madd);
-            //out.print(st.executeUpdate("update cart set item_count = item_count+1 where item_id = " + madd));
+            
+            st.executeUpdate("update cart set item_count = item_count+1 where item_id=" + madd + " and customer_id = '"+ session.getAttribute("customer") +"'");
+            
+            ResultSet add = st.executeQuery("select item_count from cart where item_id=" + madd + " and customer_id = '"+ session.getAttribute("customer") +"'");
+            if (add.next()) out.print(add.getInt(1));
                 
         }
         
         //removing -1
         if (request.getParameter("minus") !=null) {
             String mmin = request.getParameter("minus");
-            out.print(mmin);
-            //st.executeUpdate("update cart set item_count = item_count-1 where item_id = " + mmin);
+            
+            st.executeUpdate("update cart set item_count = item_count-1 where item_id=" + mmin + " and customer_id = '"+ session.getAttribute("customer") +"'");
+        }
+        
+        //deleting from cart page
+        if (request.getParameter("trash") !=null) {
+            String id = request.getParameter("trash");
+            st.executeUpdate("delete from cart where item_id = " + id);
         }
         
         // Fast order
@@ -120,9 +142,26 @@
                 }
                     
             }
-            
+            fast.close();
         }
         
+// check if there are items in the cart page
+
+        if (request.getParameter("check") !=null) {
+            ResultSet chk = st.executeQuery("select count(*) from cart where customer_id = '" + session.getAttribute("customer")+"'");
+            if(chk.next()) out.print(chk.getString(1));
+            chk.close();
+        }
+        
+// calculating the subtotal
+
+if (request.getParameter("subtotal") !=null) {
+    
+    String sub = request.getParameter("subtotal");
+    ResultSet subtotal = st.executeQuery("select sum(item_total) from cart where customer_id = '" + session.getAttribute("customer") + "'");
+    if (subtotal.next()) out.print(subtotal.getFloat(1));
+    
+}
         
         
         

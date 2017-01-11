@@ -10,20 +10,21 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-sm-offset-1">
+                <div class="col-sm-12">
                     <div class="table-responsive">
                         <table class="table table-bordered cart-table">
                             <tbody>
                                 <%
-                                
+                                int items = 0;
                                  ResultSet res = (ResultSet) request.getAttribute("cart-items");
-                                 
                                  while (res.next()) {
+                                     items++;
                                      int id = res.getInt("item_id");
                                      String name = res.getString("item_name");
                                      String image = res.getString("item_image");
                                      float price = res.getFloat("item_price");
                                      int count = res.getInt("item_count");
+                                     
                                  %>
                                 <tr>
                                     <td class="item-thumb">
@@ -37,22 +38,26 @@
                                     </td>
                                     <td class="item-count">
                                         <div class="count-input">
-                                            <a class="incr-btn minus-meal"  add="<%=id%>" data-action="decrease" href="#">-</a>
+                                            <a class="incr-btn minus-meal"  min="<%=id%>" data-action="decrease" href="#">-</a>
                                             <input class="quantity" type="text" value="<%=count%>">
-                                            <a class="incr-btn plus-meal" min="<%=id%>" data-action="increase" href="#">+</a>
+                                            <a class="incr-btn plus-meal" add="<%=id%>" data-action="increase" href="#">+</a>
                                         </div>
                                     </td>
                                     <td class="item-remove">
-                                        <a href="#"><i class="ion-trash-b"></i></a>
+                                        <a href="#"><i class="ion-trash-b" trash="<%=id%>"></i></a>
                                     </td>
                                 </tr>
                                 <%}%>
                             </tbody>
-                        </table>                  
+                        </table> 
                     </div><!--end cart table-->
-                         <div class="row">
+                    
+                            <%
+                            if (items != 0) {
+                            %>
+                         <div class="row" id="summary">
                              
-                             <div class="col-md-7 col-md-offset-5 margin-b-30">
+                             <div id="totalcheck" class="col-md-7 col-md-offset-5 margin-b-30">
                                  <div class="cart-totals margin-b-20">
                                     <div class="cart-totals-title">
                                         <h3>Cart Totals</h3>
@@ -64,12 +69,12 @@
                                                  <td>RM <span id="subtotal"></span></td>
                                              </tr>
                                               <tr>
-                                                 <td>Shipping & Handling</td>
-                                                 <td>$2.00</td>
+                                                 <td>Gov. tax (%6)</td>
+                                                 <td>RM <span id="tax"></span></td>
                                              </tr>
                                               <tr>
                                                   <td class="text-color"><strong>Total</strong></td>
-                                                  <td class="text-color"><strong>$31.00</strong></td>
+                                                  <td class="text-color"><strong>RM <span id="total"></span></strong></td>
                                              </tr>
                                          </table>
                                      </div>
@@ -79,10 +84,40 @@
                                  </div>
                              </div>
                         </div>
+                         
+                            <%} else out.print("<center> <h3>No items in the cart .. <a href=\"./menu\">add some?</a></h3> </center> ");%>
+                            
                 </div>
             </div>
         </div>
-                            
+                            <script>
+                                ret();
+                                
+                                // calculate subtotal
+                                function ret() {
+                                    $.ajax({
+                                    url: 'testback.jsp',
+                                    method: 'POST',
+                                    data: {subtotal:1},
+                                    success: function(data) {
+                                        calc(data);
+}
+                                });
+                                }
+                                
+                                function calc(data) {
+                                    var price = parseFloat($.trim(data));
+                                          $('#subtotal').text(price);
+                                          // calculate tax
+                                          var tax = parseFloat($.trim(data)) * 0.06;
+                                $('#tax').text(tax.toFixed(2));
+                                
+                                $('#total').text(price+tax);
+                                }
+                                
+                                
+                                
+                            </script>       
                             
                             
 

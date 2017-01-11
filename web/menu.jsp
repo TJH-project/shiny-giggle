@@ -32,7 +32,7 @@
 
 <ul class="menu-filter-list list-inline margin-b-40 text-center">
 <!--                <li class="is-checked" data-filter="*">All</li>-->
-                <li class="is-checked" data-filter=".food-menu">Food</li>
+                <li data-filter=".food-menu">Food</li>
                 <li data-filter=".bev-menu">Beverages</li>
                 
             </ul>
@@ -84,14 +84,23 @@
                                 <span class="price pull-right">RM <%=price%></span>
                                 <h4><%=name%></h4>
                                 <p><%=description%></p>
-<a href="#" class="dropdown-toggle btn btn-warning" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="float: right"> Buy now 
-    <span class="caret"></span> </a>
-    <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4"> 
-        <li><a class="fast-order" href="#" data-toggle="modal" mid="<%=id%>" data-target="#order">Fast Order</a></li> 
-        <li><a class="add-to-cart" mid="<%=id%>" href="#">Add to cart</a></li> 
-        
+                                <div class="pull-right">
+                                    <a  class="fast-order btn btn-primary" href="" 
+                                    data-toggle="modal" mid="<%=id%>" 
+                                    data-target="#order">Fast Order</a>
+                                    
+                                <a class="add-to-cart btn btn-warning" mid="<%=id%>" 
+                                   href="" data-toggle="tooltip" data-placement="top" 
+                                   data-trigger="focus" title="Added">Add to cart</a>
+                                </div>
+                                
+
+<!--    <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4"> 
+        <li><a class="fast-order btn btn-primary" href="#" data-toggle="modal" mid="<%=id%>" data-target="#order">Fast Order</a></li> 
+        <li><a class="add-to-cart btn btn-warning" mid="<%=id%>" href="">Add to cart</a></li> 
+    </ul>-->
                             </div>                           
-                        </a>
+                        
                 </div>
                  <%}%>
             </div>
@@ -122,7 +131,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="name">Full name</label>  
   <div class="col-md-5">
-  <input id="name" name="name" type="text" placeholder="Enter name here..." class="form-control input-md" required="">
+  <input id="name" name="name" type="text" placeholder="Enter name here..." class="form-control input-md" required>
   <span class="help-block">Name of the recipient</span>  
   </div>
 </div>
@@ -131,7 +140,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="phone">Contact No.</label>  
   <div class="col-md-5">
-  <input id="phone" name="phone" type="text" placeholder="Phone number" class="form-control input-md" required="">
+  <input id="phone" name="phone" type="text" placeholder="Phone number" class="form-control input-md" required>
   <span class="help-block">We will contact you there</span>  
   </div>
 </div>
@@ -141,21 +150,49 @@
   <label class="col-md-4 control-label" for="method">Type of order</label>
   <div class="col-md-4"> 
     <label class="radio-inline" for="method-0">
-      <input type="radio" name="method" id="method-0" value="pickup" checked="checked">
+        <input type="radio" name="method" value="pickup" onclick="TOO('hidden')">
       Pick up
     </label> 
     <label class="radio-inline" for="method-1">
-      <input type="radio" name="method" id="method-1" value="delivery">
+      <input type="radio" name="method" value="delivery" checked="checked"
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             onclick="TOO('block')">
       Delivery
     </label>
   </div>
 </div>
 
+<script>
+    
+    function TOO(option) {
+        
+        if (option ==="hidden") {
+            $('#deliveryAddress').hide();
+        } else {
+            $('#deliveryAddress').show();
+            
+        }
+        
+            
+           
+    }
+    
+</script>
+
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="address">Address</label>  
+<div id="deliveryAddress" class="form-group">
+    <label class="col-md-4 control-label" for="address">Address</label>  
   <div class="col-md-5">
-  <input id="address" name="address" type="text" placeholder="Your Address" class="form-control input-md" required="">
+  <input id="address" name="address" type="text" placeholder="Your Address" class="form-control input-md">
   <span class="help-block">Delivery address</span>  
   </div>
 </div>
@@ -178,7 +215,7 @@
       </div>
       <div class="modal-footer">
           <input type="reset" class="btn btn-default" value="reset" />
-        <button type="button" class="btn btn-success">Order now!</button>
+        <button type="submit" class="btn btn-success">Order now!</button>
       </div>
         
               </div>

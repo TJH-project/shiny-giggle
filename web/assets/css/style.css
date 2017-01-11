@@ -2151,10 +2151,6 @@ label.error {
     height: 250px;
 }
 
-.grid {
-    height: 400px
-}
-
 .btn {
-    border-radius: 4px
+    border-radius: 2px
 }

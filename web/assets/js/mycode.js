@@ -15,41 +15,46 @@ function reservation() {
 	
 }
 // Add items to cart
-$('.add-to-cart').on('click', function () {
+$('.add-to-cart').on('click', function (event) {
     var mid = $(this).attr('mid');
-
+    event.preventDefault();
     $.ajax({
        url: 'testback.jsp',
        method: 'POST',
        data: {mid:mid},
        success: function () {
            cartItemCount ();
+            cartItems();
         }
     });
 
 });
-//        Show Cart Items
-    function cartItems() {
-        $('.ion-ios-cart').click(function () {
+
+    cartItems();
+
+    
+        $('.ion-ios-cart').click(cartItems());
+        //        Show Cart Items
+        function cartItems() {
+                    $.ajax({
+                    url: 'testback.jsp',
+                    method: 'POST',
+                    data: {data:1},
+                    success: function (data) {
+                             $('.cart-list').html(data);
+                                if (data !==null) {
+                                $('.cart-options').css('display', 'block');
+                                }
+                             else $('.cart-options').css('display', 'none');
+                            
+                    }
+                });
             
-            $.ajax({
-       url: 'testback.jsp',
-       method: 'POST',
-       data: {data:1},
-       success: function (data) {
-            $('.cart-list').html(data);
-            if (data !==0) {
-                $('.cart-options').css('display', 'block');
             }
-            else $('.cart-options').css('display', 'none');
-            cartItemCount ();
-        }
-    });
-            
-        });
-    }
+    
         // Remove items
-        $( document ).on( 'click', '.remove-item', function() {
+        $( document ).on( 'click', '.remove-item', function(event) {
+            event.preventDefault();
                     var mid = $(this).attr('mid');
 
                        $.ajax({
@@ -70,6 +75,7 @@ $('.add-to-cart').on('click', function () {
         function cartItemCount () {
                 $.ajax({
         url: 'testback.jsp',
+        method: "POST",
         data:{badge:1},
         success: function(data) {
             $('.cart-item-count').text($.trim(data));
@@ -77,36 +83,72 @@ $('.add-to-cart').on('click', function () {
     
             });
         };
-        
-        // Add +1
-        $('.plus-meal').click(function () {
-        var madd = $(this).attr('add'); // undefined
-        alert($(this).attr('add'));
-        $.ajax({
-           url: 'testback.jsp',
-           method: 'POST',
-           data: {add:madd},
-           success: function () {
-               cartItems();
-           }
-        });
-     });
-                                
-        // Minus -1                  
-    $('.minus-meal').on('click', function () {
-       var min = $(this).attr('min');
+        // Adding 
+        $('.plus-meal').on('click', function () {
+                var id = $(this).attr('add');
 
+                $.ajax({
+                    url: 'testback.jsp',
+                    method: 'POST',
+                    data: {add:id},
+                    success: function(data) {
+                        setTimeout(1000);
+                        ret();
+                    }
+                });
+});
+        // Removing
+        $('.minus-meal').on('click', function () {
+                var id = $(this).attr('min');
+                $.ajax({
+                    url: 'testback.jsp',
+                    method: 'POST',
+                    data: {minus:id},
+                    success: function(data) {
+                        setTimeout(1000);
+                        ret();
+                    }
+                });
+});
+   
+   //Remove from cart page
+    $( document ).on( 'click', '.ion-trash-b', function(event) {
+       var id = $(this).attr('trash');
+       $(this).closest('tr').remove();
+       event.preventDefault();
        $.ajax({
           url: 'testback.jsp',
           method: 'POST',
-          data: {minus:min},
+          data: {trash:id},
           success: function () {
-              cartItemCount ();
+              cartItemCount();
+              cartItems();
+              ret();
+              cartItemsInPage();
               
            }
        });
 
    });
+   // check if there are any items displayed in the cart page
+   function cartItemsInPage() {
+    $.ajax({
+        url: 'testback.jsp',
+        mehtod: 'POST',
+        data: {check:1},
+        success: function (data) {
+            var data1 = $.trim(data);
+            
+            if(data1 ==="0") {
+                    
+                    $('#totalcheck').remove();
+                    $('#summary').html("<center> <h3>No items in the cart .. <a href=\"./menu\">add some?</a></h3> </center> ");
+            }
+        }
+    });
+}
+    
+
    
    
    // Show for fast order
@@ -131,6 +173,11 @@ $('.fast-order').on('click', function () {
     });
 
 });
+
+
+
+
+
         
         
         

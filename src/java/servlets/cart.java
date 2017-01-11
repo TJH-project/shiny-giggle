@@ -30,8 +30,10 @@ public class cart extends HttpServlet {
             st = c.createStatement();
             
             ResultSet cit = st.executeQuery("select * from cart where customer_id = '" + session.getAttribute("customer") + "'");
-            
             request.setAttribute("cart-items", cit);
+//            ResultSet C = st.executeQuery("select count(*) from cart where customer_id = '" + session.getAttribute("customer") + "'");
+//            String count = C.getString(1);
+//            request.setAttribute("cart-count", count);
             
             request.getRequestDispatcher("cart.jsp").forward(request, response);
             
