@@ -174,18 +174,4 @@ $('.fast-order').on('click', function () {
 
 });
 
-
-
-
-
-        
-        
-        
-        
-        
-
-
-            
-            
-            
             

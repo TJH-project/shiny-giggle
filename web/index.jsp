@@ -143,7 +143,7 @@
             <div class="container">
                 <div class="row vertical-align-child">
                     <div class="col-md-6 text-center">
-                        <h1 class="title-1">Welcome to <br><span class="text-color ">TAJ HADRAMAWT</span></h1>  
+                        <h1 class="title-1">Welcome to <br><span class="text-color">TAJ HADRAMAWT</span></h1>  
                         <h5 class="subtitle">Our Little Story</h5>
                         <div class="space-30"></div>
                         <p>

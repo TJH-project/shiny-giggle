@@ -154,18 +154,7 @@
       Pick up
     </label> 
     <label class="radio-inline" for="method-1">
-      <input type="radio" name="method" value="delivery" checked="checked"
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             onclick="TOO('block')">
+      <input type="radio" name="method" value="delivery" checked="checked" onclick="TOO('block')">
       Delivery
     </label>
   </div>
