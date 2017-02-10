@@ -18,7 +18,7 @@
 
                         <img src="assets/images/bg2.jpg"  alt=""  width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
                         <!-- LAYER NR. 1 -->
-                        <div class="tp-caption tp-resizeme slider-title" 
+                        <div class="tp-caption tp-resizeme slider-title"
                              data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                              data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
                              data-fontsize="['80','80','80','45']"

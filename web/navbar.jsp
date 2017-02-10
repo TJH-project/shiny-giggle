@@ -57,7 +57,7 @@
                         </div>
                         <div class="col-sm-6 text-right">
                             <ul class="list-inline level-2">
-                                <li class="b-table"><a href="#" class=" waves-float waves-button" data-toggle="modal" data-target="#myModal">Book a table</a></li>
+                                <li class="b-table"><a href="#" class="waves-float waves-button" data-toggle="modal" data-target="#myModal">Book a table</a></li>
                                 
                             </ul>
                         </div>

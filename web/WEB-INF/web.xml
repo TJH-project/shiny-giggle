@@ -47,4 +47,16 @@
         <servlet-name>cart</servlet-name>
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
+    
+    
+    <!-- News page -->
+    
+    <servlet>
+        <servlet-name>news</servlet-name>
+        <servlet-class>servlets.news</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>news</servlet-name>
+        <url-pattern>/News</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -119,7 +119,7 @@
         <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
         <script src="assets/js/template-custom.js" type="text/javascript"></script>
         <script src="assets/js/onepage-custom.js" type="text/javascript"></script>
-        <script src="assets/js/ckeditor.js" type="text/javascript"></script>
+        <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
         
         <script src="assets/icheck/icheck.min.js"></script> 
         <script src="assets/js/bootstrap-clockpicker.min.js"></script>

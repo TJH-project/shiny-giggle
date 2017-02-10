@@ -1155,7 +1155,7 @@ Page breadcrumb
 */
 .page-breadcrumb {
   padding: 180px 0 150px;
-  background: url(../images/bg5.jpg) no-repeat;
+  background: url(../images/res09.jpg) no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: 0 0;
@@ -2154,3 +2154,59 @@ label.error {
 .btn {
     border-radius: 2px
 }
+
+.nav-wrapper a {
+    color: #fdd835;
+}
+
+.cpanel-sidenav {
+    transform: translateX(0px);
+    padding-top: 80px;
+    z-index: 200;
+    box-shadow: 4px 0 15px -4px #333;
+    border-right: 2px solid #fdd835;
+}
+
+.cpanel-sidenav a {
+    font-size: 20px;
+    color: #fdd835
+}
+.side-nav a:hover {
+        background-color: rgba(0,0,0,0.2);
+}
+
+.primary-dark {
+    color: #370808;
+}
+
+.primary-dark-bg {
+    background: #370808;
+}
+
+.primary-text-color {
+    color: #fdd835;
+}
+
+.cpanel-nav {
+    border-bottom: 2px solid #fdd835;
+}
+
+.side-nav {
+    width: 20%
+}
+
+.cpanel-body {
+    margin-left: 20%
+}
+
+.card-image {
+    width: 100%;
+    
+}
+
+.card .card-image .card-title {
+    padding: 10px;
+    color: #fdd835;
+    border: 1px solid #fdd835
+}
+
