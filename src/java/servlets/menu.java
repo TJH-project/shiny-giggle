@@ -26,7 +26,7 @@ public class menu extends HttpServlet {
 
             st = c.createStatement();
             
-            ResultSet rs = st.executeQuery("select * from food_products");
+            ResultSet rs = st.executeQuery("select * from food_products union select * from beverage_products");
             
             request.setAttribute("results", rs);
             

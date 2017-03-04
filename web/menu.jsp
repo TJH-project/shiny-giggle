@@ -45,15 +45,15 @@
                 <li data-filter=".appetizers"><a href="#appetizers">Appetizers</a></li>
                 <li data-filter=".main-dishes"><a href="#main-dishes">Main Dishes</a></li>
                 <li data-filter=".hot"><a href="#hot-dishes">Hot Dishes</a></li>
-                <li data-filter=".bbq"><a href="#bbq">Barbecue</a></li>
+                <li data-filter=".barbeque"><a href="#bbq">Barbeque</a></li>
                 <li data-filter=".seafood"><a href="#seafood">Seafood</a></li>
                 <li data-filter=".desserts"><a href="#desserts">Desserts</a></li>
 </ul>
 
     <ul class="bev-menu menu-filter-list list-inline margin-b-40 menu-item">
-                <li data-filter=".fresh"><a href="#fresh-juices">Fresh Juices</a></li>
+                <li data-filter=".fresh-drinks"><a href="#fresh-juices">Fresh Juices</a></li>
                 <li data-filter=".hot-drinks"><a href="#hot-drinks">Hot Drinks</a></li>
-                <li data-filter=".hot-drinks"><a href="#soft-drinks">Soft Drinks</a></li>
+                <li data-filter=".soft-drinks"><a href="#soft-drinks">Soft Drinks</a></li>
                 
 
             </ul>

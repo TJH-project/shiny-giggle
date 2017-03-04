@@ -8,26 +8,32 @@
 <br>
 <br>
 <br>
-<br>
-<br>
+
 <div class="container" style="margin-bottom: 80px ">
     <div class="row">
-        <div class="col s12 m7">
-    <h2 class="header">Horizontal Card</h2>
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="http://lorempixel.com/100/190/nature/6">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
+        
+        <%
+        ResultSet rs = (ResultSet) request.getAttribute("posts");
+        
+        while (rs.next()) {
+            
+        String title = rs.getString("post_title");
+        String contents = rs.getString("post_contents");
+        String timestamp = rs.getString("post_date");
+        %>
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="block-update-card">
+              <div class="update-card-body">
+        <h3 style="display: inline;"><%=title%></h3> <span class="pull-right" style="font-size: 12px; margin-right: 5px"><%=timestamp%></span> 
+        <br><br><%=contents%>
     </div>
   </div>
+        </div>
+        
+        
+        <%}%>
+        
+        
       </div>
 </div>
 

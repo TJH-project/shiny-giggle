@@ -173,15 +173,17 @@ $('.fast-order').on('click', function () {
     });
 
 });
-
- $('.collapsible').collapsible();
  
- 
-     $(document).ready(function() {
-         $('.news-modal').leanModal();
-     });
+    
      
-         
+     
+     
+
+
+  
+
+
+
      
   
   

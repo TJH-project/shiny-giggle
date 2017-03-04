@@ -58,6 +58,7 @@
                         <div class="col-sm-6 text-right">
                             <ul class="list-inline level-2">
                                 <li class="b-table"><a href="#" class="waves-float waves-button" data-toggle="modal" data-target="#myModal">Book a table</a></li>
+                                <li><a href="cpanel" class="waves-float waves-button">Dashboard</a></li>
                                 
                             </ul>
                         </div>
@@ -210,10 +211,10 @@
                                     <li><a href="menu-grid.html">Menu grid</a></li>
                                 </ul>
                             </li>-->
-                            <li><a href="./menu">Menu</a></li>
-                            <li><a href="./reserve-a-table">Reservation</a></li>
-                             <li><a href="reservation.html">News</a></li>
-                             <li><a href="reservation.html">Catering</a></li>
+                            <li><a href="menu">Menu</a></li>
+                            <li><a href="reserve-a-table">Reservation</a></li>
+                             <li><a href="News">News</a></li>
+                             <li><a href="About">About TH/Contact us</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->

@@ -59,4 +59,68 @@
         <servlet-name>news</servlet-name>
         <url-pattern>/News</url-pattern>
     </servlet-mapping>
+    
+    <!-- Upload Image -->
+    
+    <servlet>
+        <servlet-name>Upload</servlet-name>
+        <servlet-class>servlets.uploadImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Upload</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Add Post -->
+    
+    <servlet>
+        <servlet-name>AppPost</servlet-name>
+        <servlet-class>servlets.AddPost</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AppPost</servlet-name>
+        <url-pattern>/publishPost</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!-- About Page -->
+    
+    <servlet>
+        <servlet-name>About</servlet-name>
+        <servlet-class>servlets.About</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>About</servlet-name>
+        <url-pattern>/About</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    <!-- CPanel Page -->
+    
+    <servlet>
+        <servlet-name>CPanel</servlet-name>
+        <servlet-class>servlets.Cpanel</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>CPanel</servlet-name>
+        <url-pattern>/cpanel</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!-- Add Meal -->
+    
+    <servlet>
+        <servlet-name>AddMeal</servlet-name>
+        <servlet-class>servlets.AddMeal</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddMeal</servlet-name>
+        <url-pattern>/addMeal</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

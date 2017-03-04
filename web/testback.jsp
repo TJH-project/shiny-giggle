@@ -1,3 +1,4 @@
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ include file = "backend/config.jsp" %>
 <%@page import = "org.json.simple.JSONObject" %>
 
@@ -162,6 +163,17 @@ if (request.getParameter("subtotal") !=null) {
     if (subtotal.next()) out.print(subtotal.getFloat(1));
     
 }
+
+// Uploading Image
+
+                if (request.getParameter("imageUpload") !=null) {
+                    
+                    MultipartRequest multipartRequest = new MultipartRequest(request,
+                "C:\\Users\\Osama Islam\\Documents\\NetBeansProjects\\Restaurant\\web\\assets\\images\\Uploads");
+                    
+                }
+
+                
         
         
         
